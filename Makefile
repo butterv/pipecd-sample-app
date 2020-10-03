@@ -53,3 +53,12 @@ ifeq ($(tag),)
 else
 	docker push istsh/gitops-sample-app-server:${tag}
 endif
+
+create-migration-file:
+ifeq ($(name),)
+	@echo "Please execute this command with the migration file name."
+	@echo "Usage:"
+	@echo "	$$ make create-migration-file name=<name>"
+else
+	migrate create -dir db/migrations/ -ext sql ${name}
+endif
