@@ -13,7 +13,9 @@ var slackNotificationCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO(istsh): send to slack
 
-		fmt.Print("successfully sent to slack")
-		return
+		trigger := args[0]
+		envName := args[1]
+
+		fmt.Printf("successfully sent to slack. trigger: %s, env: %s\n", trigger, envName)
 	},
 }
