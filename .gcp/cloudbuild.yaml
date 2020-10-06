@@ -60,7 +60,7 @@ steps:
         set -x && \
         git config --global user.email $(git log --format='%an <%ae>' -n 1 HEAD | sed 's/.*\<\([^>]*\)\>.*/\1/g') && \
         git fetch origin ${_TARGET_BRANCH} && git switch ${_TARGET_BRANCH} && \
-        git fetch origin ${_DEFAULT_BRANCH} && git merge origin/${_DEFAULT_BRANCH}
+        git fetch origin ${_DEFAULT_BRANCH} && git merge --ff origin/${_DEFAULT_BRANCH}
     volumes:
       - name: 'ssh'
         path: /root/.ssh
