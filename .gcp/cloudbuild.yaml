@@ -136,16 +136,16 @@ substitutions:
   _GITHUB_ACCOUNT: istsh
   _APP_REPOSITORY: gitops-sample-app
   _MANIFEST_REPOSITORY: gitops-sample-manifests
-  _GRPC_GATEWAY_MANIFEST_DIR: k8s/ops/base/grpc-gateway
+  _GRPC_GATEWAY_MANIFEST_DIR: k8s/base/proxy
   _GRPC_GATEWAY_TEMPLATE_FILE: rollout.yaml.tpl
   _GRPC_GATEWAY_GENERATE_FILE: rollout.yaml
-  _GRPC_SERVER_MANIFEST_DIR: k8s/ops/base/grpc-server
+  _GRPC_SERVER_MANIFEST_DIR: k8s/base/server
   _GRPC_SERVER_TEMPLATE_FILE: rollout.yaml.tpl
   _GRPC_SERVER_GENERATE_FILE: rollout.yaml
-  _JOB_MANIFEST_DIR: k8s/ops/base/job
+  _JOB_MANIFEST_DIR: k8s/base/job
   _JOB_TEMPLATE_FILE: job.yaml.tpl
   _JOB_GENERATE_FILE: job.yaml
-  _MIGRATION_MANIFEST_DIR: k8s/ops/base/migration
+  _MIGRATION_MANIFEST_DIR: k8s/base/migration
   _MIGRATION_TEMPLATE_FILE: job.yaml.tpl
   _MIGRATION_GENERATE_FILE: job.yaml
 #  _DEFAULT_BRANCH: <Defined on the edit page for the Cloud Build trigger>
