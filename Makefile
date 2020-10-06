@@ -18,40 +18,40 @@ generate-pb:
 			--grpc-gateway_out=logtostderr=true:$(GOPATH)/src; \
 	done
 
-proxy-build:
+app-build:
 ifeq ($(tag),)
 	@echo "Please execute this command with the docker image tag."
 	@echo "Usage:"
-	@echo "	$$ make proxy-build tag=<version>"
+	@echo "	$$ make app-build tag=<version>"
 else
-	docker build -f ./Dockerfile.proxy -t istsh/gitops-sample-app-proxy:${tag} ./
+	docker build -f ./Dockerfile -t istsh/gitops-sample-app:${tag} ./
 endif
 
-server-build:
+app-push:
 ifeq ($(tag),)
 	@echo "Please execute this command with the docker image tag."
 	@echo "Usage:"
-	@echo "	$$ make server-build tag=<version>"
+	@echo "	$$ make app-push tag=<version>"
 else
-	docker build -f ./Dockerfile.server -t istsh/gitops-sample-app-server:${tag} ./
+	docker push istsh/gitops-sample-app:${tag}
 endif
 
-proxy-push:
+migration-build:
 ifeq ($(tag),)
 	@echo "Please execute this command with the docker image tag."
 	@echo "Usage:"
-	@echo "	$$ make proxy-push tag=<version>"
+	@echo "	$$ make migration-build tag=<version>"
 else
-	docker push istsh/gitops-sample-app-proxy:${tag}
+	docker build -f ./Dockerfile.migration -t istsh/gitops-sample-migration:${tag} ./
 endif
 
-server-push:
+migration-push:
 ifeq ($(tag),)
 	@echo "Please execute this command with the docker image tag."
 	@echo "Usage:"
-	@echo "	$$ make server-push tag=<version>"
+	@echo "	$$ make migration-push tag=<version>"
 else
-	docker push istsh/gitops-sample-app-server:${tag}
+	docker push istsh/gitops-sample-migration:${tag}
 endif
 
 create-migration-file:
