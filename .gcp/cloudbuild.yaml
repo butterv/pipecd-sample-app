@@ -1,6 +1,6 @@
 timeout: 900s
 steps:
-  - id: build and push docker image
+  - id: build and push app docker image
     name: gcr.io/kaniko-project/executor:v1.0.0
     args:
       - --destination=gcr.io/$PROJECT_ID/app:$COMMIT_SHA
@@ -137,11 +137,11 @@ substitutions:
   _APP_REPOSITORY: gitops-sample-app
   _MANIFEST_REPOSITORY: gitops-sample-manifests
   _GRPC_GATEWAY_MANIFEST_DIR: k8s/ops/base/proxy
-  _GRPC_GATEWAY_TEMPLATE_FILE: rollout.yaml.tpl
-  _GRPC_GATEWAY_GENERATE_FILE: rollout.yaml
+  _GRPC_GATEWAY_TEMPLATE_FILE: deployment.yaml.tpl
+  _GRPC_GATEWAY_GENERATE_FILE: deployment.yaml
   _GRPC_SERVER_MANIFEST_DIR: k8s/ops/base/server
-  _GRPC_SERVER_TEMPLATE_FILE: rollout.yaml.tpl
-  _GRPC_SERVER_GENERATE_FILE: rollout.yaml
+  _GRPC_SERVER_TEMPLATE_FILE: deployment.yaml.tpl
+  _GRPC_SERVER_GENERATE_FILE: deployment.yaml
   _JOB_MANIFEST_DIR: k8s/ops/base/job
   _JOB_TEMPLATE_FILE: job.yaml.tpl
   _JOB_GENERATE_FILE: job.yaml
