@@ -1,1 +1,1 @@
-# gitops-sample-app 
+# pipecd-sample-app 

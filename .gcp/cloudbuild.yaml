@@ -134,8 +134,8 @@ steps:
 
 substitutions:
   _GITHUB_ACCOUNT: istsh
-  _APP_REPOSITORY: gitops-sample-app
-  _MANIFEST_REPOSITORY: gitops-sample-manifests
+  _APP_REPOSITORY: pipecd-sample-app
+  _MANIFEST_REPOSITORY: pipecd-sample-manifests
   _GRPC_GATEWAY_MANIFEST_DIR: k8s/ops/base/proxy
   _GRPC_GATEWAY_TEMPLATE_FILE: deployment.yaml.tpl
   _GRPC_GATEWAY_GENERATE_FILE: deployment.yaml

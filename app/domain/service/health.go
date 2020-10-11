@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	healthpb "github.com/istsh/gitops-sample-app/app/interface/rpc/v1/health"
+	healthpb "github.com/istsh/pipecd-sample-app/app/interface/rpc/v1/health"
 )
 
 type healthService struct {

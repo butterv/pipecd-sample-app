@@ -24,7 +24,7 @@ ifeq ($(tag),)
 	@echo "Usage:"
 	@echo "	$$ make app-build tag=<version>"
 else
-	docker build -f ./Dockerfile -t istsh/gitops-sample-app:${tag} ./
+	docker build -f ./Dockerfile -t istsh/pipecd-sample-app:${tag} ./
 endif
 
 app-push:
@@ -33,7 +33,7 @@ ifeq ($(tag),)
 	@echo "Usage:"
 	@echo "	$$ make app-push tag=<version>"
 else
-	docker push istsh/gitops-sample-app:${tag}
+	docker push istsh/pipecd-sample-app:${tag}
 endif
 
 migration-build:
@@ -42,7 +42,7 @@ ifeq ($(tag),)
 	@echo "Usage:"
 	@echo "	$$ make migration-build tag=<version>"
 else
-	docker build -f ./Dockerfile.migration -t istsh/gitops-sample-migration:${tag} ./
+	docker build -f ./Dockerfile.migration -t istsh/pipecd-sample-migration:${tag} ./
 endif
 
 migration-push:
@@ -51,7 +51,7 @@ ifeq ($(tag),)
 	@echo "Usage:"
 	@echo "	$$ make migration-push tag=<version>"
 else
-	docker push istsh/gitops-sample-migration:${tag}
+	docker push istsh/pipecd-sample-migration:${tag}
 endif
 
 create-migration-file:

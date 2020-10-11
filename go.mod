@@ -1,4 +1,4 @@
-module github.com/istsh/gitops-sample-app
+module github.com/istsh/pipecd-sample-app
 
 go 1.15
 

@@ -13,8 +13,8 @@ import (
 	_ "google.golang.org/grpc/encoding/gzip"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/istsh/gitops-sample-app/app/domain/service"
-	healthpb "github.com/istsh/gitops-sample-app/app/interface/rpc/v1/health"
+	"github.com/istsh/pipecd-sample-app/app/domain/service"
+	healthpb "github.com/istsh/pipecd-sample-app/app/interface/rpc/v1/health"
 )
 
 func main() {
